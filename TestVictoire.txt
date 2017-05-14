@@ -1,19 +1,21 @@
-switch ($cj2){
+if ($cj1 -ne $cj2){
+  switch ($cj2){
 
-  1 { switch($cj1){
-        2 { $scorej1++ }  # j1 gagne
-        3 { $scorej2++ }  # j2 gagne
-      }
-  }
-  2 { switch($cj1){
-        1 { $scorej2++ }  # j2 gagne
-        3 { $scorej1++ }  # j1 gagne
-      }
-  }
+    1 { switch($cj1){
+          2 { $scorej1++ }  # j1 gagne
+          3 { $scorej2++ }  # j2 gagne
+        }
+    }
+    2 { switch($cj1){
+          1 { $scorej2++ }  # j2 gagne
+          3 { $scorej1++ }  # j1 gagne
+        }
+    }
 
-  3 { switch($cj1){
-        2 { $scorej2++ }  # j2 gagne
-        1 { $scorej1++ }  # j1 gagne
-      }
+    3 { switch($cj1){
+          2 { $scorej2++ }  # j2 gagne
+          1 { $scorej1++ }  # j1 gagne
+        }
+    }
   }
 }
