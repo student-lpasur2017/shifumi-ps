@@ -10,13 +10,33 @@
 # $nbjh                     # nb joueur humain
 # $start                    # qui commence
 
+# function regles_jeu             # affiche regles du jeux
+  # Afficher les regles du jeu
+    # Choix :
+      # Pierre : 1
+      # Feuille : 2
+      # Ciseaux : 3
+
+# function debut_jeu($nb)              # fonction qui fait debuter le joueur
+  # Si $nb == 1 alors $j1 commence
+    # Choix de j1
+    # clear : pour que le joueur suivant ne voit pas le choix pas le choix du joueur precedent
+    # Choix de j2
+  # Sinon
+    # Choix de j2
+    # clear : pour que le joueur suivant ne voit pas le choix pas le choix du joueur precedent
+    # Choix de j1
+  # return $choicej1,$choicej2
+
+# function afficher_gagnant($scorej1,$scorej2)    # Affiche le gagnant
+  # Afficher le gagnant
+    # si $scorej1 > $scorej2 c'est $j1 qui gagne et afficher les scores
+    # si $scorej1 < $scorej2 c'est $j2 qui gagne et afficher les scores
+    # si $scorej1 == $scorej2 c'est $j1 qui gagne et afficher les scores
+
 # Message d'accueil "BIENVENUE SHIFFUMI !!!"
 
-# Afficher les regles du jeu
-  # Choix :
-    # Pierre : 1
-    # Feuille : 2
-    # Ciseaux : 3
+# Appel regles_jeu
 
 # Combien de joueur humain
 # Lire $nbjh
@@ -37,15 +57,10 @@
 
 # Boucle pour  le jeu
 # Tant que nbmatch != 0 on continue de joueur
-  # Si $start == 1 alors $j1 commence
-    # Choix de j1
-    # clear : pour que le joueur suivant ne voit pas le choix pas le choix du joueur precedent
-    # Choix de j2
-  # Sinon
-    # Choix de j2
-    # clear : pour que le joueur suivant ne voit pas le choix pas le choix du joueur precedent
-    # Choix de j1
-  # Si pas egalite entre les differents choix des joueurs on continue
+  # Initialisation var $resMatch (vider variable)
+  # Appel debut_jeu($start) en faisant $resMatch = debut_jeu($start)
+
+  # Si pas egalite entre les differents choix des joueurs on continue. On fait le test avec $resMatch[0] et $resMatch[1]
     # switcher les conditions de victoire. Dans le cas d'une victoire on incremente de 1 le score du gagnant
       # Si choix2 a choisi 1 on fait un autre switch pour savoir si choix1 a pris 2 ou 3
       # Si choix2 a choisi 2 on fait un autre switch pour savoir si choix1 a pris 1 ou 3
@@ -53,19 +68,9 @@
     # fin du switch des conditions de victoires
     # nbmatch--
   # Sinon on recommence la partie
-    # Rappel des regles
-    # Si $start == 1 alors $j1 commence
-      # Choix de j1
-      # clear : pour que le joueur suivant ne voit pas le choix pas le choix du joueur precedent
-      # Choix de j2
-    # Sinon
-      # Choix de j2
-      # clear : pour que le joueur suivant ne voit pas le choix pas le choix du joueur precedent
-      # Choix de j1
+    # Afficher "On recommence la partie"
+    # Appel regles_jeu
   # Fin de si
 # fin tant que
 
-# Afficher le gagnant
-  # si $scorej1 > $scorej2 c'est $j1 qui gagne et afficher les scores
-  # si $scorej1 < $scorej2 c'est $j2 qui gagne et afficher les scores
-  # si $scorej1 == $scorej2 c'est $j1 qui gagne et afficher les scores
+# Appel afficher_gagnant
